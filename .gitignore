@@ -1,0 +1,4 @@
+*gem5/build/**
+*.pyc
+*.swp
+*gem5/parsetab.py
