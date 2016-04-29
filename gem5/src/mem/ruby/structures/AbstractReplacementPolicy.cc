@@ -29,10 +29,16 @@
  */
 
 #include "mem/ruby/structures/AbstractReplacementPolicy.hh"
+#include "debug/RubyCache.hh"
+#include "debug/RubyCacheTrace.hh"
+#include "debug/RubyResourceStalls.hh"
+#include "debug/RubyStats.hh"
+
 
 AbstractReplacementPolicy::AbstractReplacementPolicy(const Params * p)
   : SimObject(p)
 {
+    DPRINTF(RubyCache, "Ezhil: AbstractReplacementPolicy: Const: Entry\n");
     m_num_sets = p->size/p->block_size/p->assoc;
     m_assoc = p->assoc;
     m_last_ref_ptr = new Tick*[m_num_sets];
@@ -42,6 +48,7 @@ AbstractReplacementPolicy::AbstractReplacementPolicy(const Params * p)
             m_last_ref_ptr[i][j] = 0;
         }
     }
+    DPRINTF(RubyCache, "Ezhil: AbstractReplacementPolicy: Exit: m_assoc:%d m_num_sets:%d\n", m_assoc, m_num_sets);
 }
 
 AbstractReplacementPolicy *

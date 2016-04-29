@@ -52,6 +52,7 @@ DirectoryMemory::DirectoryMemory(const Params *p)
 void
 DirectoryMemory::init()
 {
+    DPRINTF(RubyCache, "Ezhil: DirectoryMem Init: Entry : BlockSize %ld\n", RubySystem::getBlockSizeBytes());
     m_num_entries = m_size_bytes / RubySystem::getBlockSizeBytes();
     m_entries = new AbstractEntry*[m_num_entries];
     for (int i = 0; i < m_num_entries; i++)
@@ -64,6 +65,8 @@ DirectoryMemory::init()
         m_numa_high_bit = RubySystem::getMemorySizeBits() - 1;
     }
     assert(m_numa_high_bit != 0);
+    DPRINTF(RubyCache, "Ezhil: DirectoryMem Init: Exit : m_num_entries:%ld m_num_directories:%d \n", m_num_entries, m_num_directories);
+    DPRINTF(RubyCache, "Ezhil: DirectoryMem Init: exit : MemorySizeBits from rubysystem %ld\n", RubySystem::getMemorySizeBits());
 }
 
 DirectoryMemory::~DirectoryMemory()

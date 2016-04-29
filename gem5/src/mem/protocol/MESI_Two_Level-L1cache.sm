@@ -133,6 +133,8 @@ machine(L1Cache, "MESI Directory L1 Cache CMP")
     DataBlock DataBlk,       desc="data for the block";
     bool Dirty, default="false",   desc="data is dirty";
     bool isPrefetch, desc="Set if this block was prefetched";
+    // ezhil
+    int pUtil, desc="Inc when this block is accessed";
   }
 
   // TBE fields

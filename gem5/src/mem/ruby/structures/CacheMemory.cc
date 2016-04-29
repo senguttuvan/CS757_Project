@@ -71,6 +71,8 @@ CacheMemory::CacheMemory(const Params *p)
 void
 CacheMemory::init()
 {
+    DPRINTF(RubyCache, "Ezhil: CacheMemory:init(): Entry\n");
+
     m_cache_num_sets = (m_cache_size / m_cache_assoc) /
         RubySystem::getBlockSizeBytes();
     assert(m_cache_num_sets > 1);
@@ -84,6 +86,7 @@ CacheMemory::init()
             m_cache[i][j] = NULL;
         }
     }
+    DPRINTF(RubyCache, "Ezhil: CacheMemory:init(): Exit m_cache_size:%d m_cache_assoc:%d m_cache_num_sets:%d \n", m_cache_size, m_cache_assoc, m_cache_num_sets);
 }
 
 CacheMemory::~CacheMemory()
