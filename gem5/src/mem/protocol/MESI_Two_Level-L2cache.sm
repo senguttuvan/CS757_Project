@@ -125,6 +125,40 @@ machine(L2Cache, "MESI Directory L2 Cache CMP")
     MachineID Exclusive,          desc="Exclusive holder of block";
     DataBlock DataBlk,       desc="data for the block";
     bool Dirty, default="false", desc="data is dirty";
+
+    //ezhil
+    bool isPrivate1, desc="...";
+    int rUtil1, desc="...";
+    Tick lastAccessTime1, desc="...";
+
+    bool isPrivate2, desc="...";
+    int rUtil2, desc="...";
+    Tick lastAccessTime2, desc="...";
+
+    bool isPrivate3, desc="...";
+    int rUtil3, desc="...";
+    Tick lastAccessTime3, desc="...";
+
+    bool isPrivate4, desc="...";
+    int rUtil4, desc="...";
+    Tick lastAccessTime4, desc="...";
+
+    bool isPrivate5, desc="...";
+    int rUtil5, desc="...";
+    Tick lastAccessTime5, desc="...";
+
+    bool isPrivate6, desc="...";
+    int rUtil6, desc="...";
+    Tick lastAccessTime6, desc="...";
+
+    bool isPrivate7, desc="...";
+    int rUtil7, desc="...";
+    Tick lastAccessTime7, desc="...";
+
+    bool isPrivate8, desc="...";
+    int rUtil8, desc="...";
+    Tick lastAccessTime8, desc="...";
+
   }
 
   // TBE fields
